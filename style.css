@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.title {
+    text-align: center;
+}
+
+.search-form {
+    margin: auto;
+    margin-bottom: 5rem;
+    width: 80%;
+}
+
+#search-field {
+    border: 1px;
+    border-color: black
+}

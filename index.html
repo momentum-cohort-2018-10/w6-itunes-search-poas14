@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Here's iTunes</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="title">
+        <h1 class="f1 fw4 pa3 mv0">iTunes (basically)</h1>
+    </div>
+    <div id="play-music" class="mw5 mw7-ns center pa3 ph5-ns">
+    </div>
+    <div class="search-form" class='ma3'>
+        <input type="text" id="search-field" class="f6 f5-l input-reset fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns ba bw1" placeholder="Search for music...">
+        <button id="search-button" class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns">Search</button>
+    </div>
+    <div id="big-search">
+        <div id="search-results" class="cf pa2"></div>
+    </div>
+</body>
+</html>
