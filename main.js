@@ -2,7 +2,20 @@ let searchButton = document.getElementById('search-button')
 let searchField = document.getElementById('search-field')
 let chooseSong = document.querySelectorAll('search-results')
 
+//event listeners for search
 searchButton.addEventListener('click', function (event) {
+    searchApi()
+})
+
+searchField.addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+      searchApi()
+    }
+  })
+
+
+
+function searchApi (event) {
     $.ajax({
         url: 'https://itunes.apple.com/search', 
         data: {
@@ -59,7 +72,7 @@ searchButton.addEventListener('click', function (event) {
             $('.trumpet').on('click', play_song)
         }
     })
-})
+}
 
 
 function play_song () {
