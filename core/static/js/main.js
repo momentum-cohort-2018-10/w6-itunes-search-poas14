@@ -13,18 +13,16 @@ searchField.addEventListener('keyup', function (event) {
     }
   })
 
-
-
 function searchApi (event) {
     $.ajax({
-        url: 'https://itunes.apple.com/search', 
+        url: 'https://itunes.apple.com/search',
+        jsonp: "callback",
         data: {
             media: 'music',
             term: searchField.value
         },
-        dataType: "json",
+        dataType: "jsonp",
         success: function (coin) {
-            console.log(coin)
             let searchResults = document.getElementById('search-results')
             searchResults.innerHTML= ''
             for (let food of coin.results) {
@@ -38,7 +36,7 @@ function searchApi (event) {
                 let songArtist = document.createElement('div')
                 //CSS template classes
                 songArt.classList.add('trumpet')
-                songItem.classList.add('fl','w-50','w-25-m','w-20-l','pa2')
+                songItem.classList.add('song-list','fl','w-50','w-25-m','w-20-l','pa2')
                 songItem.classList.add('grow','dib','f3-ns','no-underline','black-90')
                 songArt.classList.add('w-100','db','outline','black-10')
                 songInfo.classList.add('mt2','f6','lh-copy')
@@ -53,7 +51,7 @@ function searchApi (event) {
                 songSource.src = food.previewUrl
                 songSource.type = "audio/mpeg"
                 songPreview.controls = true
-                songPreview.classList.add('w-100')
+                songPreview.classList.add('w-100','music')
                 songPreview.appendChild(songSource)
 
                 //song artwork
@@ -76,14 +74,13 @@ function searchApi (event) {
 
 
 function play_song () {
-    chosenSong = event.target
+    let chosenSong = event.target
     console.log(chosenSong)
-    songDisplay = chosenSong.firstChild
+    let songDisplay = chosenSong.firstChild
     songDisplay.autoplay = true
     console.log(songDisplay)
     let playMusic = document.getElementById('play-music')
     playMusic.innerHTML = ""
-    // playMusic.appendChild(songDisplay)
     $(songDisplay).clone().appendTo(playMusic)
 }
 

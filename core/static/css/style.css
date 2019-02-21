@@ -16,3 +16,9 @@ body {
     border-width: 1px;
     border-color: black
 }
+
+
+.song-list {
+width: 20rem;
+height: 25rem;
+}
